@@ -1,4 +1,3 @@
-
 /* Reset e Variáveis */
 * {
     margin: 0;
@@ -41,13 +40,25 @@ header {
     align-items: center;
 }
 
-.logo h1 {
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text h1 {
     color: var(--primary-color);
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.logo p {
+.logo-text p {
     color: var(--secondary-color);
     font-size: 0.85rem;
     margin-top: -5px;
@@ -294,6 +305,15 @@ footer {
     .header-container {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-img {
+        height: 50px;
     }
 
     nav ul {
