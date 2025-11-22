@@ -1,26 +1,372 @@
-@media (max-width: 768px) {
+/* RESET E VARIÁVEIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #772F48;
+    --secondary-color: #3D3828;
+    --tertiary-color: #DADAD1;
+    --background-color: #F6F1EE;
+    --foreground-color: #0F0814;
+    --accent-color: #E8A87C;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+}
+
+/* LAYOUT BÁSICO */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* HEADER */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 48px;          /* LOGO PEQUENA */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text h1 {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.logo-text p {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    margin-top: -4px;
+}
+
+/* NAV DESKTOP */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* MENU HAMBURGUER */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ANIMAÇÃO DO X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 520px;
+    background: linear-gradient(rgba(119, 47, 72, 0.7), rgba(119, 47, 72, 0.7)),
+                url('../images/image1.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1.5rem;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero h2 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.4rem;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* SEÇÕES */
+.sobre,
+.servicos,
+.diferenciais {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.servicos {
+    background-color: var(--background-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem;
+}
+
+.section-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.02rem;
+    color: var(--secondary-color);
+}
+
+/* SERVIÇOS */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.servico-card {
+    background-color: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+
+.servico-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.servico-content {
+    padding: 1.6rem;
+}
+
+.servico-content h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.servico-content p {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 0.98rem;
+}
+
+.servico-content ul {
+    padding-left: 1.4rem;
+    color: var(--secondary-color);
+    font-size: 0.96rem;
+}
+
+.servico-content li + li {
+    margin-top: 0.35rem;
+}
+
+/* DIFERENCIAIS */
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2rem;
+}
+
+.diferencial-item {
+    text-align: center;
+    padding: 1.8rem 1.4rem;
+    background-color: var(--background-color);
+    border-radius: 14px;
+    transition: transform 0.3s;
+}
+
+.diferencial-item:hover {
+    transform: translateY(-4px);
+}
+
+.diferencial-icon {
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.diferencial-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+}
+
+.diferencial-item p {
+    color: var(--secondary-color);
+    font-size: 0.96rem;
+}
+
+/* CONTATO */
+.contato {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+}
+
+.contato .section-title,
+.contato .section-subtitle {
+    color: var(--white);
+}
+
+.contato-info {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.contato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 160px;
+}
+
+.contato-item i {
+    font-size: 1.7rem;
+}
+
+.contato-item a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.contato-item a:hover {
+    opacity: 0.8;
+}
+
+.contato-item div p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.6rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVO - TABLET / MOBILE */
+@media (max-width: 900px) {
     .header-container {
-        padding: 1rem;
+        padding: 0.8rem 1.2rem;
     }
 
-    .logo-img {
-        height: 40px;
+    .hero {
+        height: 460px;
     }
 
-    .logo-text h1 {
-        font-size: 1.2rem;
+    .hero h2 {
+        font-size: 2.2rem;
     }
+}
 
-    .logo-text p {
-        font-size: 0.75rem;
-    }
-
-    /* AQUI o hamburguer aparece no mobile */
+/* RESPONSIVO - MOBILE */
+@media (max-width: 768px) {
+    /* mostra hamburguer e esconde menu horizontal */
     .menu-toggle {
         display: flex;
     }
 
-    /* NAV vira menu mobile recolhido */
     nav {
         position: absolute;
         top: 100%;
@@ -30,22 +376,20 @@
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.25s ease;
     }
 
     nav.active {
-        max-height: 400px;
+        max-height: 260px;
     }
 
     nav ul {
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
 
     nav ul li {
-        width: 100%;
-        text-align: center;
         border-bottom: 1px solid var(--tertiary-color);
     }
 
@@ -55,6 +399,51 @@
 
     nav a {
         display: block;
-        padding: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+
+    .hero {
+        height: auto;
+        padding: 3.2rem 1.4rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1.15rem;
+    }
+
+    .logo-text p {
+        font-size: 0.72rem;
+    }
+
+    .logo-img {
+        height: 42px;
+    }
+
+    .contato-info {
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
     }
 }
