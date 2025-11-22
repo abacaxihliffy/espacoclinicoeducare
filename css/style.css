@@ -47,7 +47,7 @@ header {
 }
 
 .logo-img {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
@@ -292,6 +292,11 @@ nav a:hover {
     opacity: 0.8;
 }
 
+.contato-item div p {
+    margin: 0;
+    font-size: 1rem;
+}
+
 /* Footer */
 footer {
     background-color: var(--secondary-color);
@@ -313,7 +318,7 @@ footer {
     }
 
     .logo-img {
-        height: 50px;
+        height: 40px;
     }
 
     nav ul {
