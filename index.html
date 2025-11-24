@@ -112,7 +112,7 @@
         </div>
     </section>
 
-    <!-- Nossa Estrutura Section -->
+    <!-- Nossa Estrutura Section (13 imagens) -->
     <section id="estrutura" class="estrutura">
         <div class="container">
             <h2 class="section-title">Nossa Estrutura</h2>
@@ -298,7 +298,7 @@
             });
         });
 
-        // Lazy loading para imagens
+        // Lazy loading simples das imagens da galeria (opcional, não depende de CSS)
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
