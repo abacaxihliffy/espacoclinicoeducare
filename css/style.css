@@ -131,7 +131,7 @@ nav a:hover::after {
                 rgba(119, 47, 72, 0.75),
                 rgba(119, 47, 72, 0.75)
               ),
-              url('../images/image1.png') center/cover no-repeat;
+              url('../images/image1.PNG') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
