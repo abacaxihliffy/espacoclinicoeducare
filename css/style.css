@@ -223,7 +223,8 @@ section {
 .servicos,
 .equipe,
 .estrutura,
-.diferenciais {
+.diferenciais,
+.depoimentos {
     padding: 4rem 0;
     background-color: var(--white);
 }
@@ -324,16 +325,16 @@ section {
     margin-top: 0.25rem;
 }
 
-/* NOSSA EQUIPE */
+/* NOSSA EQUIPE - OTIMIZADO */
 .equipe {
     background-color: var(--white);
 }
 
 .equipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 2.2rem;
+    margin-top: 2rem;
 }
 
 .equipe-card {
@@ -353,7 +354,7 @@ section {
 
 .equipe-foto {
     width: 100%;
-    height: 320px;
+    height: 280px;
     overflow: hidden;
     background-color: #f0f0f0;
 }
@@ -366,26 +367,30 @@ section {
 }
 
 .equipe-info {
-    padding: 1.4rem 1.5rem 1.6rem;
+    padding: 1.2rem 1.3rem 1.4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .equipe-info h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--primary-color);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
 }
 
 .equipe-cargo {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
 .equipe-descricao {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: var(--secondary-color);
     opacity: 0.9;
+    line-height: 1.5;
 }
 
 /* NOSSA ESTRUTURA – GALERIA */
@@ -431,6 +436,74 @@ section {
     color: var(--white);
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+/* DEPOIMENTOS - MODERNIZADO */
+.depoimentos {
+    background-color: var(--soft-bg);
+    padding: 4rem 0;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.depoimento-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 2rem 1.8rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.depoimento-aspas {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    opacity: 0.15;
+}
+
+.depoimento-content {
+    position: relative;
+    z-index: 1;
+}
+
+.depoimento-texto {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.depoimento-autor {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 1rem;
+}
+
+.depoimento-nome {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.depoimento-data {
+    font-size: 0.88rem;
+    color: var(--secondary-color);
+    opacity: 0.75;
 }
 
 /* DIFERENCIAIS */
@@ -556,7 +629,15 @@ footer {
     }
 
     .equipe-foto {
-        height: 300px;
+        height: 260px;
+    }
+
+    .equipe-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -634,11 +715,25 @@ footer {
     /* Equipe - Fotos ajustadas */
     .equipe-grid {
         grid-template-columns: 1fr;
-        gap: 1.8rem;
+        gap: 1.5rem;
     }
 
     .equipe-foto {
-        height: 350px;
+        height: 300px;
+    }
+
+    /* Depoimentos Mobile */
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .depoimento-card {
+        padding: 1.5rem 1.3rem;
+    }
+
+    .depoimento-texto {
+        font-size: 0.95rem;
     }
 
     /* Galeria */
@@ -705,7 +800,26 @@ footer {
 
     /* Equipe */
     .equipe-foto {
-        height: 320px;
+        height: 280px;
+    }
+
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Depoimentos */
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .depoimento-card {
+        padding: 1.3rem 1.1rem;
+    }
+
+    .depoimento-aspas {
+        font-size: 2rem;
+        top: 1rem;
+        right: 1rem;
     }
 
     /* Serviços */
